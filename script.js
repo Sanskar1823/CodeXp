@@ -1,30 +1,40 @@
-// Vocabulary Module
-function showVocabulary() {
-    document.getElementById('vocabulary-section').classList.toggle('hidden');
+// Smooth Scroll
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
-function checkVocabulary() {
-    const answer = document.getElementById('vocab-input').value.toLowerCase();
-    const result = answer === 'manzana' ? 'Correct!' : 'Try Again!';
-    document.getElementById('vocab-result').innerText = result;
+// Vocabulary Builder
+function addWord() {
+    const word = document.getElementById("new-word").value;
+    const meaning = document.getElementById("new-meaning").value;
+    if (word && meaning) {
+        const list = document.getElementById("word-list");
+        const item = document.createElement("li");
+        item.textContent = `${word}: ${meaning}`;
+        list.appendChild(item);
+    }
 }
 
-// Grammar Module
-function showGrammar() {
-    document.getElementById('grammar-section').classList.toggle('hidden');
+// Speech Recognition
+function startSpeechRecognition() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.onresult = (event) => {
+        document.getElementById("speech-output").textContent = event.results[0][0].transcript;
+    };
+    recognition.start();
 }
 
-function checkGrammar(isCorrect) {
-    const result = isCorrect ? 'Correct!' : 'Incorrect. Try again!';
-    document.getElementById('grammar-result').innerText = result;
+// AI Chatbot
+function sendMessage() {
+    const userInput = document.getElementById("user-input").value;
+    const output = document.getElementById("chat-output");
+    output.innerHTML += `<p>You: ${userInput}</p>`;
+    output.innerHTML += `<p>Bot: That's interesting!</p>`;
 }
 
-// Smooth Scrolling (Optional)
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+// Coding Check
+function checkCodingAnswer() {
+    const answer = document.getElementById("coding-answer").value.trim();
+    const feedback = document.getElementById("coding-feedback");
+    feedback.textContent = (answer === "Hello, CodeXP!") ? "✅ Correct!" : "❌ Try Again!";
+}
