@@ -3,100 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodeXP - Interactive Learning Hub</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeXP - Language Learning App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
     <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="logo">🚀 Code<span class="xp">XP</span></div>
+    <div class="navbar">
+        <div class="logo">Code<span class="xp">XP</span></div>
         <nav>
-            <a href="#vocabulary">📚 Vocabulary</a>
-            <a href="#pronunciation">🗣️ Pronunciation</a>
-            <a href="#chatbot">🤖 AI Chatbot</a>
-            <a href="#quiz">📝 Grammar Quiz</a>
-            <a href="#coding">💻 Learn Coding</a>
-            <a href="#leaderboard">🏆 Leaderboard</a>
+            <a href="#home">Home</a>
+            <a href="#modules">Modules</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#contact">Contact</a>
         </nav>
-    </header>
+    </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>🌍 Welcome to <span class="codexp">CodeXP</span></h1>
-            <p>Master languages and coding with interactive AI learning!</p>
-            <button class="cta-button" onclick="scrollToSection('vocabulary')">🚀 Get Started</button>
+    <section id="home" class="hero">
+        <div>
+            <h1 class="animated-heading">Welcome to Code<span class="xp">XP</span></h1>
+            <p class="animated-subtitle">Master Languages with Fun and Interactive Learning!</p>
+            <button class="cta-button" onclick="location.href='#modules'">Start Learning</button>
+        </div>
+
+        <!-- Background Objects -->
+        <div class="background-objects">
+            <div class="circle"></div>
+            <div class="triangle"></div>
+            <div class="square"></div>
+            <div class="rotating-object"></div>
+            <div class="bouncing-object"></div>
         </div>
     </section>
 
-    <!-- Vocabulary Module -->
-    <section id="vocabulary" class="content fade-in">
-        <h2>📚 Vocabulary Builder</h2>
-        <p>Boost your word power by adding new words and meanings.</p>
-        <input type="text" id="new-word" placeholder="Enter a new word" />
-        <input type="text" id="new-meaning" placeholder="Enter its meaning" />
-        <button onclick="addWord()">➕ Add Word</button>
-        <ul id="word-list"></ul>
-    </section>
-
-    <!-- Pronunciation Module -->
-    <section id="pronunciation" class="content fade-in">
-        <h2>🗣️ Pronunciation Practice</h2>
-        <p>Practice speaking and receive instant feedback.</p>
-        <button onclick="startSpeechRecognition()">🎤 Start Speaking</button>
-        <p id="speech-output">Your speech will appear here...</p>
-    </section>
-
-    <!-- AI Chatbot Module -->
-    <section id="chatbot" class="content fade-in">
-        <h2>🤖 AI Chatbot</h2>
-        <p>Chat with our AI tutor to practice real conversations!</p>
-        <div id="chatbox">
-            <div id="chat-output"></div>
-            <input type="text" id="user-input" placeholder="Type a message..." />
-            <button onclick="sendMessage()">📩 Send</button>
+    <!-- Learning Modules -->
+    <section id="modules" class="content">
+        <h2>Explore Our Learning Modules</h2>
+        <div class="module">
+            <h3>Vocabulary Builder</h3>
+            <p>Enhance your word power with interactive flashcards and spaced repetition.</p>
+        </div>
+        <div class="module">
+            <h3>Grammar Quizzes</h3>
+            <p>Sharpen your skills with comprehensive grammar quizzes and explanations.</p>
+        </div>
+        <div class="module">
+            <h3>Pronunciation Practice</h3>
+            <p>Perfect your speech with real-time AI-driven voice analysis.</p>
+        </div>
+        <div class="module">
+            <h3>Code Learning (C++, Python, Java)</h3>
+            <p>Learn programming languages with interactive code challenges and tutorials.</p>
+        </div>
+        <div class="module">
+            <h3>Progress Tracking</h3>
+            <p>Monitor your growth and celebrate milestones with detailed analytics.</p>
         </div>
     </section>
 
-    <!-- Grammar Quiz Module -->
-    <section id="quiz" class="content fade-in">
-        <h2>📝 Grammar Quiz</h2>
-        <p>Answer grammar questions and track your progress.</p>
-        <p id="question">Question will appear here...</p>
-        <div id="answers"></div>
-        <button onclick="nextQuestion()">➡️ Next Question</button>
-        <p id="progress">Progress: 0%</p>
+    <!-- Leaderboard -->
+    <section id="leaderboard" class="content">
+        <h2>Leaderboard</h2>
+        <div class="animated-item">🏆 Alice - 1500 Points</div>
+        <div class="animated-item">🥈 Bob - 1300 Points</div>
+        <div class="animated-item">🥉 Charlie - 1200 Points</div>
     </section>
 
-    <!-- Coding Practice Module -->
-    <section id="coding" class="content fade-in">
-        <h2>💻 Learn Coding (C++, Python)</h2>
-        <p>Write code and test your solutions instantly!</p>
-        <p id="coding-question">What does this code output?</p>
-        <pre id="code-snippet">
-            print("Hello, CodeXP!")
-        </pre>
-        <textarea id="coding-answer" placeholder="Write your answer..."></textarea>
-        <button onclick="checkCodingAnswer()">✅ Submit</button>
-        <p id="coding-feedback"></p>
+    <!-- Contact Section -->
+    <section id="contact" class="content">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us at <a href="mailto:support@codexp.com">support@codexp.com</a></p>
     </section>
-
-    <!-- Leaderboard Module -->
-    <section id="leaderboard" class="content fade-in">
-        <h2>🏆 Leaderboard</h2>
-        <p>See the top learners and their progress!</p>
-        <ul id="leaderboard-list">
-            <li>🚀 Alice - 92% Progress</li>
-            <li>🔥 Bob - 87% Progress</li>
-            <li>💎 Charlie - 80% Progress</li>
-        </ul>
-    </section>
-
-    <script src="script.js"></script>
-
 </body>
 
 </html>
