@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeXP - Language Learning App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
@@ -27,39 +25,32 @@
             <p class="animated-subtitle">Master Languages with Fun and Interactive Learning!</p>
             <button class="cta-button" onclick="location.href='#modules'">Start Learning</button>
         </div>
-
-        <!-- Background Objects -->
-        <div class="background-objects">
-            <div class="circle"></div>
-            <div class="triangle"></div>
-            <div class="square"></div>
-            <div class="rotating-object"></div>
-            <div class="bouncing-object"></div>
-        </div>
     </section>
 
     <!-- Learning Modules -->
     <section id="modules" class="content">
         <h2>Explore Our Learning Modules</h2>
-        <div class="module">
+
+        <div class="module" onclick="showVocabulary()">
             <h3>Vocabulary Builder</h3>
-            <p>Enhance your word power with interactive flashcards and spaced repetition.</p>
+            <p>Enhance your word power with interactive flashcards.</p>
         </div>
-        <div class="module">
+        <div id="vocabulary-section" class="hidden">
+            <p>Translate 'Apple' to Spanish:</p>
+            <input type="text" id="vocab-input" placeholder="Type here...">
+            <button onclick="checkVocabulary()">Submit</button>
+            <p id="vocab-result"></p>
+        </div>
+
+        <div class="module" onclick="showGrammar()">
             <h3>Grammar Quizzes</h3>
-            <p>Sharpen your skills with comprehensive grammar quizzes and explanations.</p>
+            <p>Sharpen your grammar skills.</p>
         </div>
-        <div class="module">
-            <h3>Pronunciation Practice</h3>
-            <p>Perfect your speech with real-time AI-driven voice analysis.</p>
-        </div>
-        <div class="module">
-            <h3>Code Learning (C++, Python, Java)</h3>
-            <p>Learn programming languages with interactive code challenges and tutorials.</p>
-        </div>
-        <div class="module">
-            <h3>Progress Tracking</h3>
-            <p>Monitor your growth and celebrate milestones with detailed analytics.</p>
+        <div id="grammar-section" class="hidden">
+            <p>Choose the correct sentence:</p>
+            <button onclick="checkGrammar(false)">She go to school.</button>
+            <button onclick="checkGrammar(true)">She goes to school.</button>
+            <p id="grammar-result"></p>
         </div>
     </section>
 
@@ -74,8 +65,9 @@
     <!-- Contact Section -->
     <section id="contact" class="content">
         <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us at <a href="mailto:support@codexp.com">support@codexp.com</a></p>
+        <p>Reach us at <a href="mailto:support@codexp.com">support@codexp.com</a></p>
     </section>
-</body>
 
+    <script src="scripts.js"></script>
+</body>
 </html>
