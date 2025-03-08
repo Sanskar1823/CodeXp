@@ -26,8 +26,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 id="animated-heading" class="animate__animated">Welcome to CodeXP</h1>
-            <h1>🌍 Welcome to <span class="codexp">CodeXP</span></h1>
+            <h1 id="animated-heading" class="animate__animated animate__bounce">🌍 Welcome to <span class="codexp">CodeXP</span></h1>
             <p>Master languages and coding with interactive AI learning!</p>
             <button class="cta-button" onclick="scrollToSection('vocabulary')">🚀 Get Started</button>
         </div>
@@ -84,15 +83,6 @@
         <button onclick="checkCodingAnswer()">✅ Submit</button>
         <p id="coding-feedback"></p>
     </section>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const heading = document.getElementById('animated-heading');
-        heading.classList.remove('animate__bounce'); // Remove if present
-        void heading.offsetWidth; // Force reflow
-        heading.classList.add('animate__bounce'); // Reapply animation
-      });
-    </script>
 
     <script src="script.js"></script>
 
