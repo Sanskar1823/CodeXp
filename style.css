@@ -4,213 +4,96 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    color: #fff;
-    overflow-x: hidden;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
 }
 
 /* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    width: 90%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    padding: 20px;
+    background: #1a1a2e;
+    color: white;
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .xp {
-    color: #FFD700;
+    color: #ff4b5c;
 }
 
 nav a {
-    margin-left: 2rem;
+    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #FFD700;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    position: relative;
+    padding: 100px 20px;
 }
 
 .animated-heading {
     font-size: 4rem;
-    animation: floatIn 1.5s ease-in-out;
+    color: #ff4b5c;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .animated-subtitle {
     font-size: 1.5rem;
-    margin-top: 1rem;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards 0.5s;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background: #FFD700;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #ff4b5c;
+    color: white;
     border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
 .cta-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #FFD700;
 }
 
-/* Background Objects */
-.background-objects div {
-    position: absolute;
-    animation: float 4s infinite ease-in-out;
-}
-
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    top: 20%;
-    left: 10%;
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid rgba(255, 255, 255, 0.3);
-    bottom: 20%;
-    right: 10%;
-    animation-delay: 1s;
-}
-
-.square {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.3);
-    top: 50%;
-    right: 40%;
-    animation-delay: 2s;
-}
-
-/* Section Styling */
+/* Modules */
 .content {
-    padding: 5rem 10%;
-    animation: fadeInUp 1s ease-in-out;
+    padding: 50px;
+    text-align: center;
 }
 
-/* Leaderboard */
-.animated-item {
-    margin: 1rem 0;
-    animation: slideIn 1s ease-in-out;
+.module {
+    background: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-/* New Animations */
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.module:hover {
+    transform: scale(1.05);
 }
 
-.rotating-object {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    animation: rotate 5s linear infinite;
-    top: 10%;
-    right: 15%;
+.hidden {
+    display: none;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.bouncing-object {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 223, 186, 0.6);
-    animation: bounce 3s infinite ease-in-out;
-    bottom: 15%;
-    left: 20%;
-}
-
-/* Keyframes */
-@keyframes floatIn {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
+/* Animations */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
-    100% {
+    to {
         opacity: 1;
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
