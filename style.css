@@ -59,7 +59,7 @@ button {
 /* Fade-in Animation */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
