@@ -11,87 +11,93 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="logo">🚀 Code<span class="xp">XP</span></div>
-        <nav>
-            <a href="#vocabulary">📚 Vocabulary</a>
-            <a href="#pronunciation">🗣️ Pronunciation</a>
-            <a href="#chatbot">🤖 AI Chatbot</a>
-            <a href="#quiz">📝 Grammar Quiz</a>
-            <a href="#coding">💻 Learn Coding</a>
-        </nav>
-    </header>
+    <!-- Login Page -->
+    <div id="login-container" class="login-container animate__animated animate__fadeIn">
+        <h2>🔐 Login to CodeXP</h2>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit">🚀 Login</button>
+        </form>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 id="animated-heading" class="animate__animated animate__bounce">🌍 Welcome to <span class="codexp">CodeXP</span></h1>
-            <p>Master languages and coding with interactive AI learning!</p>
-            <button class="cta-button" onclick="scrollToSection('vocabulary')">🚀 Get Started</button>
-        </div>
-    </section>
+    <!-- Main Content (Hidden Initially) -->
+    <div id="main-content" style="display: none;">
+        <!-- Navigation Bar -->
+        <header class="navbar animate__animated animate__fadeInDown">
+            <div class="logo">🚀 Code<span class="xp">XP</span></div>
+            <nav>
+                <a href="#vocabulary">📚 Vocabulary</a>
+                <a href="#pronunciation">🗣️ Pronunciation</a>
+                <a href="#chatbot">🤖 AI Chatbot</a>
+                <a href="#quiz">📝 Grammar Quiz</a>
+                <a href="#coding">💻 Learn Coding</a>
+            </nav>
+        </header>
 
-    <!-- Vocabulary Module -->
-    <section id="vocabulary" class="content fade-in">
-        <h2>📚 Vocabulary Builder</h2>
-        <p>Boost your word power by adding new words and meanings.</p>
-        <input type="text" id="new-word" placeholder="Enter a new word" />
-        <input type="text" id="new-meaning" placeholder="Enter its meaning" />
-        <button onclick="addWord()">➕ Add Word</button>
-        <ul id="word-list"></ul>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero animate__animated animate__zoomIn">
+            <div class="hero-content">
+                <h1 id="animated-heading" class="animate__animated animate__bounce">🌍 Welcome to <span class="codexp">CodeXP</span></h1>
+                <p>Master languages and coding with interactive AI learning!</p>
+                <button class="cta-button" onclick="scrollToSection('vocabulary')">🚀 Get Started</button>
+            </div>
+        </section>
 
-    <!-- Pronunciation Module -->
-    <section id="pronunciation" class="content fade-in">
-        <h2>🗣️ Pronunciation Practice</h2>
-        <p>Practice speaking and receive instant feedback.</p>
-        <button onclick="startSpeechRecognition()">🎤 Start Speaking</button>
-        <p id="speech-output">Your speech will appear here...</p>
-    </section>
+        <!-- Vocabulary Module -->
+        <section id="vocabulary" class="content fade-in animate__animated animate__fadeInUp">
+            <h2>📚 Vocabulary Builder</h2>
+            <p>Boost your word power by adding new words and meanings.</p>
+            <input type="text" id="new-word" placeholder="Enter a new word" />
+            <input type="text" id="new-meaning" placeholder="Enter its meaning" />
+            <button onclick="addWord()">➕ Add Word</button>
+            <ul id="word-list"></ul>
+        </section>
 
-    <!-- AI Chatbot Module -->
-    <section id="chatbot" class="content fade-in">
-        <h2>🤖 AI Chatbot</h2>
-        <p>Chat with our AI tutor to practice real conversations!</p>
-        <div id="chatbox">
-            <div id="chat-output"></div>
-            <input type="text" id="user-input" placeholder="Type a message..." />
-            <button onclick="sendMessage()">📩 Send</button>
-        </div>
-    </section>
+        <!-- Pronunciation Module -->
+        <section id="pronunciation" class="content fade-in animate__animated animate__fadeInUp">
+            <h2>🗣️ Pronunciation Practice</h2>
+            <p>Practice speaking and receive instant feedback.</p>
+            <button onclick="startSpeechRecognition()">🎤 Start Speaking</button>
+            <p id="speech-output">Your speech will appear here...</p>
+        </section>
 
-    <!-- Grammar Quiz Module -->
-    <section id="quiz" class="content fade-in">
-        <h2>📝 Grammar Quiz</h2>
-        <p>Answer grammar questions and track your progress.</p>
-        <p id="question">Question will appear here...</p>
-        <div id="answers"></div>
-        <button onclick="nextQuestion()">➡️ Next Question</button>
-        <p id="progress">Progress: 0%</p>
-    </section>
+        <!-- AI Chatbot Module -->
+        <section id="chatbot" class="content fade-in animate__animated animate__fadeInUp">
+            <h2>🤖 AI Chatbot</h2>
+            <p>Chat with our AI tutor to practice real conversations!</p>
+            <div id="chatbox">
+                <div id="chat-output"></div>
+                <input type="text" id="user-input" placeholder="Type a message..." />
+                <button onclick="sendMessage()">📩 Send</button>
+            </div>
+        </section>
 
-    <!-- Coding Practice Module -->
-    <section id="coding" class="content fade-in">
-        <h2>💻 Learn Coding (C++, Python)</h2>
-        <p>Write code and test your solutions instantly!</p>
-        <p id="coding-question">What does this code output?</p>
-        <pre id="code-snippet">
-            print("Hello, CodeXP!")
-        </pre>
-        <textarea id="coding-answer" placeholder="Write your answer..."></textarea>
-        <button onclick="checkCodingAnswer()">✅ Submit</button>
-        <p id="coding-feedback"></p>
-    </section>
+        <!-- Grammar Quiz Module -->
+        <section id="quiz" class="content fade-in animate__animated animate__fadeInUp">
+            <h2>📝 Grammar Quiz</h2>
+            <p>Answer grammar questions and track your progress.</p>
+            <p id="question">Question will appear here...</p>
+            <div id="answers"></div>
+            <button onclick="nextQuestion()">➡️ Next Question</button>
+            <p id="progress">Progress: 0%</p>
+        </section>
+
+        <!-- Coding Practice Module -->
+        <section id="coding" class="content fade-in animate__animated animate__fadeInUp">
+            <h2>💻 Learn Coding (C++, Python)</h2>
+            <p>Write code and test your solutions instantly!</p>
+            <p id="coding-question">What does this code output?</p>
+            <pre id="code-snippet">
+                print("Hello, CodeXP!")
+            </pre>
+            <textarea id="coding-answer" placeholder="Write your answer..."></textarea>
+            <button onclick="checkCodingAnswer()">✅ Submit</button>
+            <p id="coding-feedback"></p>
+        </section>
+    </div>
 
     <script src="script.js"></script>
-<script>
- <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const heading = document.getElementById('animated-heading');
-        heading.classList.add('animate__bounce');
-    });
-</script>
 
 </body>
 
