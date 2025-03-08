@@ -85,6 +85,13 @@
     </section>
 
     <script src="script.js"></script>
+<script>
+    // Ensure the animation triggers after the page loads
+    window.addEventListener('load', () => {
+        const heading = document.getElementById('animated-heading');
+        heading.classList.add('animate__bounce');
+    });
+</script>
 
 </body>
 
